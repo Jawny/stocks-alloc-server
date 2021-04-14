@@ -1,6 +1,4 @@
-// lib/app.ts
-import * as express from "express";
-
+import express from "express";
 // Create a new express application instance
 const app: express.Application = express();
 
