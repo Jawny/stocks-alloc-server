@@ -13,7 +13,9 @@
       "@src": ["src"],
       "@src/*": ["src/*"],
       "@utils": ["src/utils"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@routes": ["src/routes"],
+      "@routes/*": ["src/routes/*"]
     }
   }
 }
