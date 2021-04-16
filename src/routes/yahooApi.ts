@@ -30,9 +30,20 @@ const yahooApiRoute = express.Router();
 yahooApiRoute.get("/quote-summary", async (req, res) => {
   const { ticker, modules } = req.body;
 
-  const yahooSummary = await yahooFinance.quoteSummary(ticker, {
-    modules,
-  });
+  if (!ticker || !modules) {
+    res.status(400).json("missing paramaters: ticker, modules.");
+  }
+
+  try {
+    const yahooSummary = await yahooFinance.quoteSummary(ticker, {
+      modules,
+    });
+    res.status(200).json(yahooSummary);
+  } catch (error) {
+    res
+      .status(400)
+      .json("invalid parameters. Modules string array is case sensitive.");
+  }
 });
 
 export default yahooApiRoute;

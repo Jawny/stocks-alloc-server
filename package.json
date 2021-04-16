@@ -15,8 +15,8 @@
     "@types/express": "^4.17.11",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.3"
+    "tslint": "^5.20.1",
+    "typescript": "^3.9.9"
   },
   "dependencies": {
     "@types/jsdoc-to-markdown": "^7.0.0",
