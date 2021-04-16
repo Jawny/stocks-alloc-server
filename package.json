@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "tsnd --respawn -r tsconfig-paths/register src/app.ts",
-    "prod": "pm2 start src/app.ts --watch",
+    "prod": "tsc && pm2 start dist/app.js --watch",
     "doc": "jsdoc -c jsdoc.json",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "_moduleAliases": {
+    "@routes": "dist/routes"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +28,7 @@
     "express": "^4.16.4",
     "jsdoc": "^3.6.6",
     "jsdoc-to-markdown": "^7.0.1",
+    "module-alias": "^2.2.2",
     "ts-node-dev": "^1.1.6",
     "yahoo-finance2": "^1.10.4"
   }
