@@ -8,5 +8,5 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api", yahooApiRoutes);
 
 app.listen(3000, () => {
-  console.log("Example app listening on port 3000!");
+  console.log("server listening on port 3000!");
 });
