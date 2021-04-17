@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd --respawn -r tsconfig-paths/register src/app.ts",
-    "prod": "tsc && pm2 start dist/app.js --watch",
+    "dev": "tsnd --respawn -r tsconfig-paths/register src/app.ts",
+    "postinstall": "tsc",
+    "start": "node dist/app.js",
+    "pm2": "tsc && pm2 start dist/app.js --watch",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master",
     "doc": "jsdoc -c jsdoc.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
