@@ -1,4 +1,5 @@
 import "module-alias/register";
+import cors from "cors";
 import express from "express";
 import { yahooApiRoutes } from "@routes";
 require("dotenv").config();
@@ -6,6 +7,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/api", yahooApiRoutes);
