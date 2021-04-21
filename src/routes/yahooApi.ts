@@ -31,16 +31,16 @@ yahooApiRoute.get("/quote-summary", async (req, res) => {
   const { ticker, modules } = req.body;
 
   if (!ticker || !modules) {
-    res.status(400).json("missing paramaters: ticker, modules.");
+    return res.status(400).json("missing paramaters: ticker, modules.");
   }
 
   try {
     const yahooSummary = await yahooFinance.quoteSummary(ticker, {
       modules,
     });
-    res.status(200).json(yahooSummary);
+    return res.status(200).json(yahooSummary);
   } catch (error) {
-    res
+    return res
       .status(400)
       .json("invalid parameters. Modules string array is case sensitive.");
   }
