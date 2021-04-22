@@ -17,7 +17,7 @@ const yahooApiRoute = express.Router();
 
 /**
  * Route serving stock summary
- * @name get/quote-summary
+ * @name post/quote-summary
  * @function
  * @memberof module:routes/yahooApi~Yahoo Api
  * @inner
@@ -27,7 +27,7 @@ const yahooApiRoute = express.Router();
  * @param {Array<string>} req.body.modules - Array of module option strings.
  * @return {Object} - Object with module summary details.
  */
-yahooApiRoute.get("/quote-summary", async (req, res) => {
+yahooApiRoute.post("/quote-summary", async (req, res) => {
   const { ticker, modules } = req.body;
 
   if (!ticker || !modules) {
