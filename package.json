@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsnd --respawn -r tsconfig-paths/register src/app.ts --watch src",
     "postinstall": "tsc",
-    "start": " tsc && node dist/app.js",
+    "start": "node dist/app.js",
     "pm2": "tsc && pm2 start dist/app.js --watch",
     "deploy": "git add . && git commit -m Heroku && git push heroku master",
     "doc": "jsdoc -c jsdoc.json",
